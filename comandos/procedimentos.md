@@ -1,0 +1,1 @@
+Após criar um app, colocar o app no INSTALLED_APPS, do settings do projeto  
