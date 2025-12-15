@@ -21,3 +21,12 @@ git remote add origin URL_DO_GIT
 
 **
 Ver na página do Github as instruções.
+
+Migrando a base de dados do Django
+
+python manage.py makemigrations
+python manage.py migrate
+Criando e modificando a senha de um super usuário Django
+
+python manage.py createsuperuser (bvcomdigital senha: eb....)
+python manage.py changepassword USERNAME 

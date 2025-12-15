@@ -1,10 +1,10 @@
 {
-  "window.zoomLevel": 2,
+  "window.zoomLevel": -1,
   "editor.fontSize": 24,
   "editor.hover.enabled": "on",
   "workbench.startupEditor": "none",
   "explorer.compactFolders": false,
-  "terminal.integrated.fontSize": 24,
+  "terminal.integrated.fontSize": 18,
   "editor.rulers": [80, 120],
   "workbench.colorTheme": "OM Theme (Default Dracula Italic)",
   "workbench.iconTheme": "material-icon-theme",
@@ -50,5 +50,6 @@
   "python.defaultInterpreterPath": "./venv/bin/python",
   "python.analysis.typeCheckingMode": "basic",
   "cSpell.enabled": true,
-  "python.formatting.provider": "none"
+  "python.formatting.provider": "none",
+  "window.zoomPerWindow": false
 }
