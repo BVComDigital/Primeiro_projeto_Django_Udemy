@@ -7,8 +7,10 @@ from django.utils import timezone
 # Obs.: blank=True deixa o campo opcional, (default=timezone.now) executa o comando automaticamente na criação do contato
 
 # Depois
-# category (foreign key), show (boolean), owner (foreign key)
-# picture (imagem)
+# category (foreign key), show (boolean), picture (imagem) 
+
+#Depois
+# owner (foreign key)
 
 class Contact(models.Model):
     first_name = models.CharField(max_length=50)
@@ -17,6 +19,9 @@ class Contact(models.Model):
     email = models.EmailField(max_length=254, blank=True)
     created_date = models.DateTimeField(default=timezone.now)
     description = models.TextField(blank=True)
+    show = models.BooleanField(default=True)
+    picture = models.ImageField(blank=True, upload_to='picture/%Y/%m')
+
 
     def __str__(self) -> str:
         return f'{self.first_name} {self.last_name}'
