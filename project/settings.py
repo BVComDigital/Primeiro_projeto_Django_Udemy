@@ -1,3 +1,4 @@
+# type: ignore
 """
 Django settings for project project.
 
@@ -109,7 +110,7 @@ LANGUAGE_CODE = 'pt-br'
 
 TIME_ZONE = 'America/Sao_paulo'
 
-USE_I18N = True
+USE_I18N = False
 
 USE_TZ = True
 
@@ -125,3 +126,8 @@ STATIC_ROOT = BASE_DIR / 'static' #collectstatic
 
 MEDIA_URL = 'media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+
+try:
+    from project.local_settings import *
+except ImportError:
+    ...

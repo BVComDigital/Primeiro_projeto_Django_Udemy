@@ -12,4 +12,7 @@ class ContactAdmin(admin.ModelAdmin):
     list_editable = 'first_name', 'last_name', #para editar campos
     list_display_links = 'id', 'phone', #cria um link nestes campos
     
-
+@admin.register(models.Category)
+class CategoryAdmin(admin.ModelAdmin):
+    list_display = 'name', 
+    ordering = '-id',
