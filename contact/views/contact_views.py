@@ -1,15 +1,20 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.db.models import Q # Para colocar o ou nos filtros de busca
 from contact.models import Contact
+from django.core.paginator import Paginator
 
 def index(request):
 
     contacts = Contact.objects\
         .filter(show=True)\
-        .order_by('-id')[10:20] # Seleciona os contatos e ordena por id decrescente.
+        .order_by('-id')
+    
+    paginator = Paginator(contacts, 10)  
+    page_number = request.GET.get("page")
+    page_obj = paginator.get_page(page_number)
 
     context = {
-        'contacts': contacts,
+        'page_obj': page_obj,
         'site_title': 'Contatos - '
     }
 
@@ -40,10 +45,15 @@ def search(request):
             )\
         .order_by('-id') # Seleciona os contatos e ordena por id decrescente. Filtra usando a função Q que permite o 'OU'. Pode colocar uma busca do google dentro do Django
     
+    paginator = Paginator(contacts, 10)  
+    page_number = request.GET.get("page")
+    page_obj = paginator.get_page(page_number)
+
+    
     print(contacts.query) # debuga a busca
 
     context = {
-        'contacts': contacts,
+        'page_obj': page_obj,
         'site_title': 'Contatos - ',
         'search_value': search_value,
     }
