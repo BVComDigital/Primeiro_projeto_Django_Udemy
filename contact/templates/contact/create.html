@@ -1,7 +1,7 @@
 {% extends "global/base.html" %}
 
 
-{% block content %}
+{% block content %} 
     {% comment %} <h1>CIRAR CONOTATO</h1> {% endcomment %}
     <div class="form-wrapper">
 
@@ -21,8 +21,12 @@
             <div class="form-group">
                 <label for="{{ field.id_for_label }}">{{ field.label }}</label>
                 {{ field }}
-
                 {{ field.errors}}
+                
+                {% if field.help_text %}
+                  <p class="help_text">{{ field.help_text }}</p>
+                {% endif %}
+                  
             </div>
         {% endfor %}    
         </div> 
