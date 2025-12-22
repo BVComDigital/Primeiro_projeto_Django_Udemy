@@ -1,3 +1,4 @@
+# type: ignore
 from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
@@ -6,11 +7,9 @@ from django.contrib.auth.models import User
 # first_name (string), last_name (string), phone (string)
 # email (email), created_date (date), description (text)
 # Obs.: blank=True deixa o campo opcional, (default=timezone.now) executa o comando automaticamente na criação do contato
-
 # Depois
 # category (foreign key), show (boolean), picture (imagem) 
-
-#Depois
+# Owner (foreign key)
 
 
 
