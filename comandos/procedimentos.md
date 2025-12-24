@@ -38,3 +38,11 @@ Passa a url criada em contacts para a url do projeto:
     ]
 
 Criar um superusuario para acessar área administrativa do django
+
+Usuário: Bruno
+email : bruno@bv.com
+senha: XgtwkHj@TCPf8jH  
+
+Usuário: Bruno
+email : bruno2@bv.com
+senha: 4aAcUpg57hWf@4S
