@@ -14,6 +14,12 @@
         <p><b>Description:</b> {{ contact.description }}</p>
         <p><b>Category:</b> {{ contact.category.name }}</p> 
         {% comment %} Category está desta forma pq é foreign key  {% endcomment %}
+
+        {% if contact.picture %}
+        <p>
+            <img src="{{ contact.picture.url }}" alt="{{ contact.first_name }} {{ contact.last_name }}">
+        </p>
+        {% endif %}
         
         
         <div class="contact-links">

@@ -2,34 +2,39 @@
 
 
 {% block content %} 
-    {% comment %} <h1>CIRAR CONOTATO</h1> {% endcomment %}
-    <div class="form-wrapper">
+  {% comment %} <h1>CIRAR CONOTATO</h1> {% endcomment %}
+  <div class="form-wrapper">
 
-        <h2>Contato</h2>
-        
-        <form 
-        action="{{ form_action }}"
-        method="POST"
-        enctype="multipart/form-data"
-        >
-        {% comment %} csrf_token garante segurança do formulário {% endcomment %}
-        {% csrf_token %} 
+      <h2>Contato</h2>
+      
+      <form 
+      action="{{ form_action }}"
+      method="POST"
+      enctype="multipart/form-data"
+      >
+      {% comment %} csrf_token garante segurança do formulário {% endcomment %}
+      {% csrf_token %} 
 
-        <div class="form-content">
+      <div class="form-content">
         
-        {% for field in form %}
-            <div class="form-group">
-                <label for="{{ field.id_for_label }}">{{ field.label }}</label>
-                {{ field }}
-                {{ field.errors}}
-                
-                {% if field.help_text %}
-                  <p class="help_text">{{ field.help_text }}</p>
-                {% endif %}
-                  
-            </div>
-        {% endfor %}    
-        </div> 
+      {% for field in form %}
+        <div class="form-group">
+          <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+          {{ field }}
+          {{ field.errors}}
+          
+          {% if field.help_text %}
+            <p class="help_text">{{ field.help_text }}</p>
+          {% endif %}
+              
+          </div>
+              {% if field.name == 'picture' and field.value.url %}
+                <div class="form-group">
+                  <img src="{{ field.value.url }}" alt="">
+                </div>
+              {% endif %}
+          {% endfor %}    
+          </div> 
 
         {% if form.non_field_errors %}
         <div class="form-content">
