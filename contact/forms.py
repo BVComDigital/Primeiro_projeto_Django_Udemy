@@ -1,6 +1,7 @@
 from django import forms # Importa formularios do Django
 from django.core.exceptions import ValidationError
-from contact import  models
+from django.contrib.auth.forms import UserCreationForm
+from . import models
 
 
 # Cria o formulario de contatos
@@ -51,3 +52,6 @@ class ContactForm(forms.ModelForm):
             )
 
         return first_name
+
+class RegisterForm(UserCreationForm):
+     ...
