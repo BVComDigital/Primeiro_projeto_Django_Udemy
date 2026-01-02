@@ -19,7 +19,7 @@ class ContactForm(forms.ModelForm):
     )
 
     class Meta:
-        model = models.Contact
+        model = models.Contact #type: ignore
         fields = (
             'first_name', 'last_name', 'phone',
             'email', 'description', 'category',
