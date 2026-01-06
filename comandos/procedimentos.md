@@ -37,6 +37,23 @@ Passa a url criada em contacts para a url do projeto:
         path('admin/', admin.site.urls),
     ]
 
+Alterar o projeto e mandar para o servidor via Git
+
+    Aletra o projeto onde for necessário
+    faz um $ git add .
+    faz um $ git commit -m 'mensagem'
+    faz um $ git remote -v -> para verificar servidor
+    faz um $ git push origin main -> manda para o GitHub
+    faz um $ git push agendarepo main -> manda para o repositorio (agendarepo)
+    Vai no servidor, entra no agendaapp
+    faz um $ git pull agendarepo main -> trouxe os commit dos projetos
+    Atualiza o gunicorn para ele pegar os novos arquivos
+    faz um $ sudo systemctl restart agenda
+    Se precisar faz um restart no nginx
+    faz um $ sudo systemctl restart agenda
+
+
+
 Criar um superusuario para acessar área administrativa do django
 
 Usuário: Bruno
