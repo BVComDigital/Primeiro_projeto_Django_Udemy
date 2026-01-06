@@ -125,7 +125,7 @@ pip install faker
 python manage.py runserver
 python manage.py migrate
 python manage.py collectstatic
-python manage.py createsuperuser
+python manage.py createsuperuser (bvcomdigital - ! v....@2)
 ```
 
 ## Permitir arquivos maiores no nginx
